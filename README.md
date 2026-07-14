@@ -1,53 +1,42 @@
-# FAZ OU BEBE — cartas pra imprimir
+# FAZ OU BEBE — 200 cartas pra imprimir
 
-Baralho em formato **cartão de visita** (90×50 mm), fundo preto:
+Baralho estilo jogo comercial:
 
-- **Verso:** marca FAZ OU BEBE (igual em todas) — pra embaralhar
-- **Frente:** desafio FAZ (verde) ou BEBE (vermelho)
+- Tamanho **pôquer 63×88 mm**
+- **200 cartas** com categorias coloridas
+- 9 cartas por folha A4 · 23 folhas
+- Frente e verso prontos pra duplex
 
-60 cartas · 6 folhas A4 · 10 cartas por folha
+## Baixar
 
-## Arquivos prontos
+Nos **Artifacts** desta conversa:
 
-| Arquivo | Pra quê |
-|---|---|
-| [`print/verso.pdf`](print/verso.pdf) | Costas das cartas (imprime primeiro) |
-| [`print/frente.pdf`](print/frente.pdf) | Desafios (imprime no verso da mesma folha) |
-| [`print/desafios.json`](print/desafios.json) | Textos — edite e regenere se quiser |
+- `FAZ-OU-BEBE.zip`
+- `1-FRENTE-desafios.pdf`
+- `2-VERSO-costas.pdf`
+
+## Categorias
+
+| Ícone | Categoria | Cor |
+|---|---|---|
+| 🍺 | BEBA | âmbar |
+| 👥 | TODOS | teal |
+| 🎯 | DESAFIO | limão |
+| 🤝 | ESCOLHA | coral |
+| 🧠 | HISTÓRIA | azul |
+| ⭐ | CORINGA | dourado |
+| 🏆 | FINAL | creme |
 
 ## Como imprimir
 
-1. Papel A4 (180–250 g/m² fica melhor pra recortar; sulfite também rola).
-2. Imprima **`verso.pdf`**.
-3. Coloque as folhas de volta na impressora (frente e verso / duplex).
-4. Imprima **`frente.pdf`** nas **mesmas folhas**, na mesma ordem.
-5. Na impressora, use **virar na borda longa** (flip on long edge).
-6. Recorte nas bordas pretas das cartas.
+1. Imprima `2-VERSO-costas.pdf`
+2. Recoloque as folhas (virar na **borda longa**)
+3. Imprima `1-FRENTE-desafios.pdf`
+4. Recorte
 
-### Dica de alinhamento
-Faça um teste com 1 folha antes do pacote inteiro. Se o texto não bater com o verso, inverta a orientação ao recolocar o papel.
+## Conteúdo
 
-## Como jogar
+Cartas **81–200** = textos que você passou.  
+Cartas **1–80** = preenchimento no mesmo estilo (se tiver a lista original de 1–80, manda que eu substituo).
 
-1. Embaralhe o baralho (verso pra cima).
-2. A pessoa da vez tira uma carta.
-3. **FAZ** = faz o desafio (ou bebe de castigo).
-4. **BEBE** = bebe o que a carta mandar.
-5. Níveis: leve · médio · pesado.
-
-## Regenerar as folhas
-
-Se editar `print/desafios.json`:
-
-```bash
-cd print
-node gerar.js
-```
-
-Depois abra `frente.html` / `verso.html` no Chrome e imprima em PDF  
-(ou use os PDFs já gerados nesta pasta).
-
-## Modelo da sua namorada
-
-Não achei o arquivo de referência no repositório.  
-Se você mandar o modelo (foto, PDF, Canva, etc.), eu adapto o layout pra ficar igual — mantendo o formato de impressão.
+Editar textos: `print/desafios.json` → `node print/gerar.js`
