@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAZ OU BEBE — Preview</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500;700;800&display=swap');
+
+  :root {
+    --black: #050505;
+    --ink: #f3eee4;
+    --faz: #d6ff3f;
+    --bebe: #ff5a3c;
+    --mute: #8a8a8a;
+    --card-w: 90mm;
+    --card-h: 50mm;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: var(--ink);
+    font-family: "Manrope", system-ui, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    padding: 18.5mm 15mm;
+    display: grid;
+    grid-template-columns: repeat(2, var(--card-w));
+    grid-template-rows: repeat(5, var(--card-h));
+    gap: 0;
+    justify-content: space-between;
+    align-content: space-between;
+    page-break-after: always;
+    break-after: page;
+  }
+  .sheet:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .card {
+    width: var(--card-w);
+    height: var(--card-h);
+    background: var(--black);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+    border: 0.2mm solid #1a1a1a;
+  }
+  .card.empty { visibility: hidden; }
+
+  /* —— VERSO (costas / embaralhar) —— */
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4mm;
+    background:
+      radial-gradient(120% 80% at 50% 120%, #1a1a1a 0%, transparent 55%),
+      var(--black);
+  }
+  .card-back .brand {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 15mm;
+    line-height: 0.85;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+  .card-back .brand span { display: block; }
+  .card-back .ou {
+    color: var(--bebe);
+    font-size: 5.5mm;
+    letter-spacing: 0.35em;
+    margin: 1.2mm 0 0.8mm;
+  }
+  .card-back .hint {
+    margin-top: 3mm;
+    font-size: 2.4mm;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-weight: 700;
+  }
+  .card-back .frame {
+    position: absolute;
+    inset: 2.2mm;
+    border: 0.35mm solid #2a2a2a;
+    pointer-events: none;
+  }
+
+  /* —— FRENTE (desafio) —— */
+  .card-front {
+    display: flex;
+    flex-direction: column;
+    padding: 3.6mm 4mm 3.2mm;
+    background: var(--black);
+  }
+  .card-front .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2mm;
+  }
+  .badge {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 7mm;
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+  .badge.faz { color: var(--faz); }
+  .badge.bebe { color: var(--bebe); }
+  .nivel {
+    font-size: 2.3mm;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-weight: 700;
+  }
+  .texto {
+    margin: 0;
+    flex: 1;
+    font-size: 3.6mm;
+    line-height: 1.28;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+  }
+  .texto.long { font-size: 3.1mm; }
+  .foot {
+    margin-top: auto;
+    padding-top: 1.5mm;
+    border-top: 0.25mm solid #222;
+    font-size: 2mm;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 700;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  @media screen {
+    body {
+      background: #cfcfcf;
+      padding: 12px;
+    }
+    .sheet {
+      background: #fff;
+      margin: 0 auto 16px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.18);
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div style="max-width:210mm;margin:0 auto 20px;padding:12px;font-family:Manrope,sans-serif;color:#111;background:#fff">
+    <h1 style="margin:0 0 8px;font-family:Bebas Neue,sans-serif;font-size:42px;letter-spacing:.04em">FAZ OU BEBE</h1>
+    <p style="margin:0;line-height:1.45"><strong>60 cartas</strong> · 90×50 mm · 10 por folha A4.<br/>
+    Imprima <em>verso.pdf</em> e <em>frente.pdf</em> frente e verso (virar na borda longa), depois recorte.</p>
+  </div>
+  <section class="sheet">
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Imite a pessoa à sua esquerda por 20 segundos.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Conte a pior piada que você conhece. Se ninguém rir, bebe 1.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Fale com sotaque carioca até a próxima rodada.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Dance 15 segundos sem música.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Fale 3 qualidades da pessoa à sua direita.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Cante o refrão de uma música escolhida pela mesa.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Invente um apelido novo pra cada pessoa da mesa.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Mime um filme. A galera tem 1 minuto pra adivinhar.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Faça 10 polichinelos agora.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Imite um apresentador de TV anunciando a próxima rodada.</p>
+      <p class="foot">faz ou bebe</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Dance o refrão de uma música que a mesa escolher.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Conte um segredo besta que quase ninguém sabe.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Faça um elogio exagerado pra pessoa à esquerda.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Imite o jeito de flertar de alguém da mesa.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Conte a última vez que você ficou sem graça em público.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Invente uma mentira absurda sobre você e defenda por 30s.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Faça uma pose de capa de revista e tire foto.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Fale com voz de bebê até a próxima rodada — ou bebe 2.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Descreva seu tipo ideal sem usar a palavra “pessoa”.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Faça uma declaração teatral de amizade pra alguém.</p>
+      <p class="foot">faz ou bebe</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Conte o momento mais constrangedor da sua vida amorosa.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">A mesa faz 3 perguntas. Você responde ou bebe 3.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Imite como seria o seu flerte bêbado — versão completa.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Conte a pior mensagem que você já mandou bêbado.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Descreva seu pior date em detalhes.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Fique de quatro e late 10 segundos — ou bebe 3.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Mande um áudio cantando Parabéns pra Você pra um contato.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Revele um “quase aconteceu” que quase ninguém sabe.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Liste quem da mesa seria o pior colega de quarto — e por quê.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge faz">FAZ</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">A mesa inventa um desafio absurdo. Você executa em 1 minuto.</p>
+      <p class="foot">faz ou bebe</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Bebe 1 gole.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Bebe 2 goles.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Quem riu por último bebe 1 com você.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Bebe 1 e escolha alguém pra beber junto.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Faça um brinde dramático e beba 1.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Bebe 1 sem usar as mãos (com cuidado).</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Todos de preto bebem 1 — você também, se for o caso.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Bebe 1 e diga “saúde, mesa!” bem alto.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Você bebe 1 ou a pessoa à direita bebe 2.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">leve</span>
+      </div>
+      <p class="texto">Bebe 1 a cada pessoa do mesmo signo que você (mín. 1).</p>
+      <p class="foot">faz ou bebe</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Bebe 3 goles.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Bebe 2 e escolha 2 pessoas pra beber 1 cada.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Bebe enquanto canta. Para quando errar.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Você e a da esquerda: perdedor do par ou ímpar bebe 2.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Faça um shot (ou 3 goles) olhando nos olhos de alguém.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Todos bebem 1; você bebe 3.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Bebe 2 de costas. Se derramar, +1.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Escolha: 3 agora ou 1 por rodada nas próximas 3.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Quem você apontar bebe 2 — você bebe 1 junto.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">médio</span>
+      </div>
+      <p class="texto">Bebe no ritmo de uma música por 8 segundos.</p>
+      <p class="foot">faz ou bebe</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Bebe 4 goles. Sem drama.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Shot (ou 4 goles) + escolha alguém pra dobrar.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Bebe até a galera parar de bater palma (máx. 8s).</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Você bebe 3; quem você menos conhece bebe 2.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Bebe 3 e conte algo que não contaria sóbrio — ou +2.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">A mesa escolhe: 2 ou 5 goles pra você.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Você e outra pessoa: quem rir primeiro bebe 3.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Bebe 2 agora e 2 na próxima vez que falar.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Final boss: bebe 5 ou faz o desafio que a mesa inventar.</p>
+      <p class="foot">faz ou bebe</p>
+    </article>
+    <article class="card card-front">
+      <div class="top">
+        <span class="badge bebe">BEBE</span>
+        <span class="nivel">pesado</span>
+      </div>
+      <p class="texto">Bebe 4 e passe o próximo desafio pra quem quiser.</p>
+      <p class="foot">faz ou bebe</p>
+    </article></section>
+  
+</body>
+</html>

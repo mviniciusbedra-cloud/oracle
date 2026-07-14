@@ -1,39 +1,53 @@
-# FAZ OU BEBE
+# FAZ OU BEBE — cartas pra imprimir
 
-## Jogar agora (jeito fácil)
+Baralho em formato **cartão de visita** (90×50 mm), fundo preto:
 
-O GitHub **mostra o código** quando você clica no `.html` — isso é normal.  
-Pra abrir o **jogo de verdade**, faça assim:
+- **Verso:** marca FAZ OU BEBE (igual em todas) — pra embaralhar
+- **Frente:** desafio FAZ (verde) ou BEBE (vermelho)
 
-### Opção 1 — baixar e abrir (recomendado)
+60 cartas · 6 folhas A4 · 10 cartas por folha
 
-1. Clique neste link pra **baixar** o jogo:  
-   **[⬇️ Baixar jogar.html](https://github.com/mviniciusbedra-cloud/oracle/raw/cursor/faz-ou-bebe-game-d814/jogar.html)**
-2. Abra o arquivo baixado no celular ou no computador (toque / clique duas vezes).
-3. O navegador abre o jogo. Pode passar o aparelho na roda.
+## Arquivos prontos
 
-> Dica: se o navegador mostrar texto em vez do jogo, salve o arquivo na pasta Downloads e abra de lá.
+| Arquivo | Pra quê |
+|---|---|
+| [`print/verso.pdf`](print/verso.pdf) | Costas das cartas (imprime primeiro) |
+| [`print/frente.pdf`](print/frente.pdf) | Desafios (imprime no verso da mesma folha) |
+| [`print/desafios.json`](print/desafios.json) | Textos — edite e regenere se quiser |
 
-### Opção 2 — pelo terminal
+## Como imprimir
 
-Na pasta do projeto:
+1. Papel A4 (180–250 g/m² fica melhor pra recortar; sulfite também rola).
+2. Imprima **`verso.pdf`**.
+3. Coloque as folhas de volta na impressora (frente e verso / duplex).
+4. Imprima **`frente.pdf`** nas **mesmas folhas**, na mesma ordem.
+5. Na impressora, use **virar na borda longa** (flip on long edge).
+6. Recorte nas bordas pretas das cartas.
+
+### Dica de alinhamento
+Faça um teste com 1 folha antes do pacote inteiro. Se o texto não bater com o verso, inverta a orientação ao recolocar o papel.
+
+## Como jogar
+
+1. Embaralhe o baralho (verso pra cima).
+2. A pessoa da vez tira uma carta.
+3. **FAZ** = faz o desafio (ou bebe de castigo).
+4. **BEBE** = bebe o que a carta mandar.
+5. Níveis: leve · médio · pesado.
+
+## Regenerar as folhas
+
+Se editar `print/desafios.json`:
 
 ```bash
-npx --yes serve .
+cd print
+node gerar.js
 ```
 
-Abra o link que aparecer (ex.: `http://localhost:3000`).
+Depois abra `frente.html` / `verso.html` no Chrome e imprima em PDF  
+(ou use os PDFs já gerados nesta pasta).
 
----
+## Modelo da sua namorada
 
-## Como funciona
-
-1. Adicione pelo menos 2 jogadores.
-2. Escolha o nível: **Leve**, **Médio** ou **Pesado**.
-3. Gire a roda → a pessoa escolhe **FAZ** (desafio) ou **BEBE** (gole).
-4. Marque **Fez!** ou **Bebeu**.
-5. O placar (★) mostra quem mais fez e quem mais bebeu.
-
-Os desafios ficam em `js/challenges.js` (e também embutidos no `jogar.html`).
-
-Jogue com consentimento, hidratação e bom senso.
+Não achei o arquivo de referência no repositório.  
+Se você mandar o modelo (foto, PDF, Canva, etc.), eu adapto o layout pra ficar igual — mantendo o formato de impressão.
