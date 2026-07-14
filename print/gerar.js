@@ -133,26 +133,26 @@ const css = `
   .card-front {
     display: flex;
     flex-direction: column;
-    padding: 3.6mm 4mm 3.2mm;
+    padding: 3mm 3.8mm 2.8mm;
     background: var(--black);
   }
   .card-front .top {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 2mm;
+    margin-bottom: 1.2mm;
   }
   .badge {
     font-family: "Bebas Neue", Impact, sans-serif;
-    font-size: 7mm;
-    letter-spacing: 0.08em;
-    line-height: 1;
+    font-size: 11mm;
+    letter-spacing: 0.06em;
+    line-height: 0.9;
   }
   .badge.faz { color: var(--faz); }
   .badge.bebe { color: var(--bebe); }
   .nivel {
-    font-size: 2.3mm;
-    letter-spacing: 0.18em;
+    font-size: 2.8mm;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--mute);
     font-weight: 700;
@@ -160,21 +160,23 @@ const css = `
   .texto {
     margin: 0;
     flex: 1;
-    font-size: 3.6mm;
-    line-height: 1.28;
-    font-weight: 700;
+    font-size: 5mm;
+    line-height: 1.22;
+    font-weight: 800;
+    color: #ffffff;
     display: flex;
     align-items: center;
   }
-  .texto.long { font-size: 3.1mm; }
+  .texto.long { font-size: 4.2mm; }
+  .texto.xl { font-size: 3.7mm; }
   .foot {
     margin-top: auto;
-    padding-top: 1.5mm;
+    padding-top: 1.2mm;
     border-top: 0.25mm solid #222;
-    font-size: 2mm;
+    font-size: 2.2mm;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #555;
+    color: #666;
     font-weight: 700;
   }
 
@@ -211,7 +213,8 @@ function backCard() {
 
 function frontCard(d) {
   if (!d) return `<article class="card empty"></article>`;
-  const long = d.texto.length > 72 ? " long" : "";
+  const len = d.texto.length;
+  const sizeClass = len > 95 ? " xl" : len > 70 ? " long" : "";
   const nivelLabel = { leve: "leve", medio: "médio", pesado: "pesado" }[d.nivel] || d.nivel;
   return `
     <article class="card card-front">
@@ -219,7 +222,7 @@ function frontCard(d) {
         <span class="badge ${d.tipo.toLowerCase()}">${escapeHtml(d.tipo)}</span>
         <span class="nivel">${escapeHtml(nivelLabel)}</span>
       </div>
-      <p class="texto${long}">${escapeHtml(d.texto)}</p>
+      <p class="texto${sizeClass}">${escapeHtml(d.texto)}</p>
       <p class="foot">faz ou bebe</p>
     </article>`;
 }
