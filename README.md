@@ -1,28 +1,39 @@
 # FAZ OU BEBE
 
-Jogo de desafio pra jogar de galera: sorteia quem joga, a pessoa escolhe **FAZ** ou **BEBE**, e a mesa decide o clima da noite.
+## Jogar agora (jeito fácil)
 
-## Como jogar
+O GitHub **mostra o código** quando você clica no `.html` — isso é normal.  
+Pra abrir o **jogo de verdade**, faça assim:
 
-1. Abra o `index.html` no celular ou no notebook (pode passar o aparelho na roda).
-2. Adicione pelo menos 2 jogadores.
-3. Escolha o nível: **Leve**, **Médio** ou **Pesado**.
-4. Gire a roda → a pessoa da vez escolhe **FAZ** (desafio) ou **BEBE** (gole).
-5. Marque **Fez!** ou **Bebeu** e siga a noite.
-6. O placar (★) mostra quem mais fez e quem mais bebeu.
+### Opção 1 — baixar e abrir (recomendado)
 
-## Rodar local
+1. Clique neste link pra **baixar** o jogo:  
+   **[⬇️ Baixar jogar.html](https://github.com/mviniciusbedra-cloud/oracle/raw/cursor/faz-ou-bebe-game-d814/jogar.html)**
+2. Abra o arquivo baixado no celular ou no computador (toque / clique duas vezes).
+3. O navegador abre o jogo. Pode passar o aparelho na roda.
 
-Não precisa de build. Abra o arquivo direto ou sirva a pasta:
+> Dica: se o navegador mostrar texto em vez do jogo, salve o arquivo na pasta Downloads e abra de lá.
+
+### Opção 2 — pelo terminal
+
+Na pasta do projeto:
 
 ```bash
 npx --yes serve .
 ```
 
-Depois acesse o endereço que aparecer no terminal (geralmente `http://localhost:3000`).
+Abra o link que aparecer (ex.: `http://localhost:3000`).
 
-## Conteúdo
+---
 
-Os desafios ficam em `js/challenges.js`. Dá pra editar, adicionar ou remover frases por nível sem mexer no resto do jogo.
+## Como funciona
 
-Jogue com consentimento, hidratação e bom senso — desafios pesados são opcionais.
+1. Adicione pelo menos 2 jogadores.
+2. Escolha o nível: **Leve**, **Médio** ou **Pesado**.
+3. Gire a roda → a pessoa escolhe **FAZ** (desafio) ou **BEBE** (gole).
+4. Marque **Fez!** ou **Bebeu**.
+5. O placar (★) mostra quem mais fez e quem mais bebeu.
+
+Os desafios ficam em `js/challenges.js` (e também embutidos no `jogar.html`).
+
+Jogue com consentimento, hidratação e bom senso.
