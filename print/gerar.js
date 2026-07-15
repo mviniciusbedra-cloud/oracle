@@ -305,24 +305,38 @@ ${body}
 const sorted = [...desafios].sort((a, b) => a.n - b.n);
 const pagesNeeded = Math.ceil(sorted.length / PER_PAGE);
 
-const versoPages = [];
-for (let i = 0; i < pagesNeeded; i += 1) {
+function makeVersoSheet() {
   const slots = Array.from({ length: PER_PAGE }, () => "x");
   const mirrored = mirrorPage(slots);
-  versoPages.push(
-    page(mirrored.map((s) => (s ? backCard() : `<article class="card empty"></article>`)))
-  );
+  return page(mirrored.map((s) => (s ? backCard() : `<article class="card empty"></article>`)));
 }
 
-const frentePages = [];
-chunk(sorted, PER_PAGE).forEach((group) => {
+function makeFrenteSheet(group) {
   const slots = [...group];
   while (slots.length < PER_PAGE) slots.push(null);
-  frentePages.push(page(slots.map(frontCard)));
+  return page(slots.map(frontCard));
+}
+
+const versoPages = [];
+const frentePages = [];
+const duplexPages = [];
+
+const groups = chunk(sorted, PER_PAGE);
+groups.forEach((group, i) => {
+  const frente = makeFrenteSheet(group);
+  const verso = makeVersoSheet();
+  frentePages.push(frente);
+  versoPages.push(verso);
+  // Ímpares = frente, pares = verso (1-indexed: página 1 frente, 2 verso...)
+  duplexPages.push(frente, verso);
 });
 
 fs.writeFileSync(path.join(ROOT, "verso.html"), documentHtml("FAZ OU BEBE — Verso", versoPages.join("\n")));
 fs.writeFileSync(path.join(ROOT, "frente.html"), documentHtml("FAZ OU BEBE — Frente", frentePages.join("\n")));
+fs.writeFileSync(
+  path.join(ROOT, "duplex.html"),
+  documentHtml("FAZ OU BEBE — Frente e Verso (duplex)", duplexPages.join("\n"))
+);
 
 const sample = documentHtml(
   "FAZ OU BEBE — Sample",
@@ -330,4 +344,4 @@ const sample = documentHtml(
 );
 fs.writeFileSync(path.join(ROOT, "sample.html"), sample);
 
-console.log(`OK: ${sorted.length} cartas · ${pagesNeeded} folhas · estilo referência`);
+console.log(`OK: ${sorted.length} cartas · ${pagesNeeded} folhas · duplex ${duplexPages.length} páginas (ímpar=frente, par=verso)`);
