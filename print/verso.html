@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAZ OU BEBE — Verso</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Manrope:wght@600;700;800&display=swap');
+
+  :root {
+    --black: #000;
+    --red: #C62828;
+    --ink: #ffffff;
+    --muted: #8a8a8a;
+    --card-w: 63mm;
+    --card-h: 88mm;
+    --gap: 2.5mm;
+    --radius: 4.5mm;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: "Manrope", system-ui, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    padding: 14mm 8.5mm;
+    display: grid;
+    grid-template-columns: repeat(3, var(--card-w));
+    grid-template-rows: repeat(3, var(--card-h));
+    gap: var(--gap);
+    justify-content: center;
+    align-content: center;
+    page-break-after: always;
+    break-after: page;
+  }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+
+  .card {
+    width: var(--card-w);
+    height: var(--card-h);
+    background: var(--black);
+    color: var(--ink);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+  .card.empty { visibility: hidden; }
+
+  /* —— VERSO —— */
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6mm;
+    background:
+      radial-gradient(80% 60% at 50% 110%, #1a1a1a 0%, transparent 55%),
+      #000;
+  }
+  .card-back .frame {
+    position: absolute;
+    inset: 3.5mm;
+    border: 0.45mm solid #2a2a2a;
+    border-radius: 3mm;
+    pointer-events: none;
+  }
+  .card-back .brand {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 9.5mm;
+    line-height: 0.95;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+  }
+  .card-back .brand span { display: block; }
+  .card-back .ou {
+    color: var(--red);
+    font-size: 5mm;
+    letter-spacing: 0.2em;
+    margin: 1.8mm 0 1.2mm;
+  }
+  .card-back .hint {
+    margin-top: 6mm;
+    font-size: 2.5mm;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    font-family: "Manrope", sans-serif;
+  }
+
+  /* —— FRENTE —— */
+  .card-front {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    padding: 5.5mm 4.5mm 4mm;
+    text-align: center;
+  }
+  .cat {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 9mm;
+    line-height: 1;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  .icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28mm;
+    padding: 2mm 0;
+  }
+  .icon-wrap svg {
+    width: 22mm;
+    height: 22mm;
+    display: block;
+  }
+  .texto {
+    margin: 0;
+    font-size: 4.6mm;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #fff;
+    padding: 0 1mm 2mm;
+  }
+  .texto.long { font-size: 3.9mm; }
+  .texto.xl { font-size: 3.4mm; }
+  .num {
+    position: absolute;
+    right: 4mm;
+    bottom: 3.2mm;
+    font-size: 2.4mm;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  @media screen {
+    body { background: #d0d0d0; padding: 14px; }
+    .sheet {
+      background: #fff;
+      margin: 0 auto 18px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.2);
+    }
+  }
+</style>
+</head>
+<body>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+<section class="sheet">
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article>
+    <article class="card card-back">
+      <div class="frame"></div>
+      <h2 class="brand">
+        <span>FAZ</span>
+        <span class="ou">OU</span>
+        <span>BEBE</span>
+      </h2>
+      <p class="hint">embaralhe · tire uma</p>
+    </article></section>
+</body>
+</html>

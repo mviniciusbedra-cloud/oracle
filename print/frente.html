@@ -1,0 +1,2555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAZ OU BEBE — Frente</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Manrope:wght@600;700;800&display=swap');
+
+  :root {
+    --black: #000;
+    --red: #C62828;
+    --ink: #ffffff;
+    --muted: #8a8a8a;
+    --card-w: 63mm;
+    --card-h: 88mm;
+    --gap: 2.5mm;
+    --radius: 4.5mm;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: "Manrope", system-ui, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    padding: 14mm 8.5mm;
+    display: grid;
+    grid-template-columns: repeat(3, var(--card-w));
+    grid-template-rows: repeat(3, var(--card-h));
+    gap: var(--gap);
+    justify-content: center;
+    align-content: center;
+    page-break-after: always;
+    break-after: page;
+  }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+
+  .card {
+    width: var(--card-w);
+    height: var(--card-h);
+    background: var(--black);
+    color: var(--ink);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+  .card.empty { visibility: hidden; }
+
+  /* —— VERSO —— */
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6mm;
+    background:
+      radial-gradient(80% 60% at 50% 110%, #1a1a1a 0%, transparent 55%),
+      #000;
+  }
+  .card-back .frame {
+    position: absolute;
+    inset: 3.5mm;
+    border: 0.45mm solid #2a2a2a;
+    border-radius: 3mm;
+    pointer-events: none;
+  }
+  .card-back .brand {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 9.5mm;
+    line-height: 0.95;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+  }
+  .card-back .brand span { display: block; }
+  .card-back .ou {
+    color: var(--red);
+    font-size: 5mm;
+    letter-spacing: 0.2em;
+    margin: 1.8mm 0 1.2mm;
+  }
+  .card-back .hint {
+    margin-top: 6mm;
+    font-size: 2.5mm;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    font-family: "Manrope", sans-serif;
+  }
+
+  /* —— FRENTE —— */
+  .card-front {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    padding: 5.5mm 4.5mm 4mm;
+    text-align: center;
+  }
+  .cat {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 9mm;
+    line-height: 1;
+    color: var(--red);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  .icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28mm;
+    padding: 2mm 0;
+  }
+  .icon-wrap svg {
+    width: 22mm;
+    height: 22mm;
+    display: block;
+  }
+  .texto {
+    margin: 0;
+    font-size: 4.6mm;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #fff;
+    padding: 0 1mm 2mm;
+  }
+  .texto.long { font-size: 3.9mm; }
+  .texto.xl { font-size: 3.4mm; }
+  .num {
+    position: absolute;
+    right: 4mm;
+    bottom: 3.2mm;
+    font-size: 2.4mm;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  @media screen {
+    body { background: #d0d0d0; padding: 14px; }
+    .sheet {
+      background: #fff;
+      margin: 0 auto 18px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.2);
+    }
+  }
+</style>
+</head>
+<body>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Bebe 1 gole.</p>
+      <span class="num">#001</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos bebem 1 gole.</p>
+      <span class="num">#002</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Dance 15 segundos sem música.</p>
+      <span class="num">#003</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra beber 2 goles.</p>
+      <span class="num">#004</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a melhor festa da sua vida?</p>
+      <span class="num">#005</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem riu por último bebe.</p>
+      <span class="num">#006</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que estão de preto bebem.</p>
+      <span class="num">#007</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Imite a pessoa à sua esquerda por 20 segundos.</p>
+      <span class="num">#008</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra fazer um brinde com você.</p>
+      <span class="num">#009</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Conte a pior piada que você conhece. Se ninguém rir, beba.</p>
+      <span class="num">#010</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Bebe 2 goles.</p>
+      <span class="num">#011</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já mandaram áudio arrependido bebem.</p>
+      <span class="num">#012</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cante o refrão de uma música escolhida pela mesa.</p>
+      <span class="num">#013</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra trocar de lugar com você.</p>
+      <span class="num">#014</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o último filme que você assistiu?</p>
+      <span class="num">#015</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem o copo mais cheio bebe.</p>
+      <span class="num">#016</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que gostam de café bebem.</p>
+      <span class="num">#017</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Fale 5 animais em 10 segundos.</p>
+      <span class="num">#018</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra distribuir 2 goles.</p>
+      <span class="num">#019</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a viagem mais marcante da sua vida?</p>
+      <span class="num">#020</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem está usando tênis bebe.</p>
+      <span class="num">#021</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos apontam pra quem fala mais. O mais votado bebe.</p>
+      <span class="num">#022</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma mímica de um filme. A galera tem 30s pra acertar.</p>
+      <span class="num">#023</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra beber no seu lugar nesta carta.</p>
+      <span class="num">#024</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual comida você pediria agora se pudesse?</p>
+      <span class="num">#025</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já esqueceu o aniversário de alguém bebe.</p>
+      <span class="num">#026</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já ficaram sem bateria no meio da rua bebem.</p>
+      <span class="num">#027</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Fale com sotaque até a próxima carta sua.</p>
+      <span class="num">#028</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Faça par ou ímpar com a pessoa à direita. Quem perder bebe.</p>
+      <span class="num">#029</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o presente mais estranho que você já ganhou?</p>
+      <span class="num">#030</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Bebe 3 goles.</p>
+      <span class="num">#031</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que preferem doce a salgado bebem.</p>
+      <span class="num">#032</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Equilibre algo da mesa na cabeça por 8 segundos.</p>
+      <span class="num">#033</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha 2 pessoas pra beber 1 gole cada.</p>
+      <span class="num">#034</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual hábito seu ninguém da mesa sabia?</p>
+      <span class="num">#035</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem o cabelo mais curto bebe.</p>
+      <span class="num">#036</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos levantam a mão. O último bebe.</p>
+      <span class="num">#037</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Invente um apelido pra cada pessoa da mesa.</p>
+      <span class="num">#038</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto long">Escolha alguém pra ficar sem falar até a próxima rodada dele — ou beber 2.</p>
+      <span class="num">#039</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a situação mais sem graça que você já viveu?</p>
+      <span class="num">#040</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já perdeu as chaves bebe.</p>
+      <span class="num">#041</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já choraram em filme bebem.</p>
+      <span class="num">#042</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça 10 polichinelos agora.</p>
+      <span class="num">#043</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra imitar com você ao mesmo tempo.</p>
+      <span class="num">#044</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Se pudesse ter um superpoder, qual seria?</p>
+      <span class="num">#045</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem está com o celular na mão bebe.</p>
+      <span class="num">#046</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que gostam de futebol bebem.</p>
+      <span class="num">#047</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Conte até 20 de trás pra frente. Se errar, beba.</p>
+      <span class="num">#048</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra fazer um brinde criativo.</p>
+      <span class="num">#049</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual música define sua fase atual?</p>
+      <span class="num">#050</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já dormiu no sofá da sala bebe.</p>
+      <span class="num">#051</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já pediram delivery hoje (ou ontem) bebem.</p>
+      <span class="num">#052</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Fale 5 países em 10 segundos.</p>
+      <span class="num">#053</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Pedra, papel e tesoura com quem está à esquerda. Perdedor bebe.</p>
+      <span class="num">#054</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o melhor conselho que já te deram?</p>
+      <span class="num">#055</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem irmãos bebe.</p>
+      <span class="num">#056</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que preferem mar a piscina bebem.</p>
+      <span class="num">#057</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma pose de capa de revista e segure 5 segundos.</p>
+      <span class="num">#058</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra distribuir 3 goles.</p>
+      <span class="num">#059</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o emprego ou tarefa mais cansativa da sua vida?</p>
+      <span class="num">#060</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já chegou atrasado hoje (ou nesta semana) bebe.</p>
+      <span class="num">#061</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos fecham os olhos. Quem abrir primeiro bebe.</p>
+      <span class="num">#062</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Imite um animal. Se ninguém acertar em 15s, beba.</p>
+      <span class="num">#063</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto long">Escolha alguém pra ser seu “sombra”: se um beber, o outro bebe também (2 rodadas).</p>
+      <span class="num">#064</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual app você mais abre no celular?</p>
+      <span class="num">#065</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem usa óculos (ou óculos na cabeça) bebe.</p>
+      <span class="num">#066</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já esqueceram o nome de alguém na hora H bebem.</p>
+      <span class="num">#067</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Fale só em perguntas até sua próxima carta.</p>
+      <span class="num">#068</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha o próximo a comprar carta.</p>
+      <span class="num">#069</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a melhor refeição que você já comeu?</p>
+      <span class="num">#070</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem o anel, pulseira ou colar bebe.</p>
+      <span class="num">#071</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos dão nota de 0 a 10 pro próprio humor agora. Menor nota bebe.</p>
+      <span class="num">#072</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça um discurso de 15 segundos como se ganhasse um Oscar.</p>
+      <span class="num">#073</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém pra ficar imune à próxima carta dele.</p>
+      <span class="num">#074</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Guarde esta carta. Você pode cancelar UMA carta que cair pra você.</p>
+      <span class="num">#075</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Distribua 2 goles como quiser.</p>
+      <span class="num">#076</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Todos bebem, menos você.</p>
+      <span class="num">#077</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Invente uma regra até sua próxima vez. Quem esquecer bebe.</p>
+      <span class="num">#078</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Escolha uma palavra proibida. Quem falar até sua próxima vez bebe.</p>
+      <span class="num">#079</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Rodada relâmpago: todos bebem 1 gole ao mesmo tempo.</p>
+      <span class="num">#080</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já esqueceu onde estacionou o carro bebe.</p>
+      <span class="num">#081</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos escolhem uma cor. Quem repetir a cor de outra pessoa bebe.</p>
+      <span class="num">#082</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça um som de animal. Se ninguém acertar qual é, beba.</p>
+      <span class="num">#083</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para fazer um brinde criativo.</p>
+      <span class="num">#084</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a melhor refeição que você já comeu?</p>
+      <span class="num">#085</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem está com o copo mais cheio bebe.</p>
+      <span class="num">#086</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já acamparam bebem.</p>
+      <span class="num">#087</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Diga o nome de cinco filmes em 15 segundos.</p>
+      <span class="num">#088</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Você e outro jogador fazem “par ou ímpar”. Quem perder bebe.</p>
+      <span class="num">#089</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual objeto você sempre esquece em casa?</p>
+      <span class="num">#090</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem está usando roupa com zíper bebe.</p>
+      <span class="num">#091</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto long">Todos dão uma nota de 0 a 10 para o próprio dia. Quem deu a menor nota bebe.</p>
+      <span class="num">#092</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Equilibre o celular na cabeça por 10 segundos.</p>
+      <span class="num">#093</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para distribuir três goles.</p>
+      <span class="num">#094</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o trabalho mais difícil que você já fez?</p>
+      <span class="num">#095</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já perdeu uma aposta bebe.</p>
+      <span class="num">#096</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que gostam de cozinhar bebem.</p>
+      <span class="num">#097</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma pose de estátua até a próxima carta.</p>
+      <span class="num">#098</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Troque o lugar do seu copo com o de outro jogador.</p>
+      <span class="num">#099</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o último filme que fez você rir muito?</p>
+      <span class="num">#100</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Você está imune às próximas duas cartas.</p>
+      <span class="num">#101</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Distribua dois goles como quiser.</p>
+      <span class="num">#102</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Todos bebem, menos você.</p>
+      <span class="num">#103</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto long">Escolha um jogador para ser seu parceiro até a carta 110. Sempre que um beber, o outro também bebe.</p>
+      <span class="num">#104</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Você pode cancelar a próxima carta que cair para você.</p>
+      <span class="num">#105</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Todos trocam de lugar.</p>
+      <span class="num">#106</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Faça uma pergunta para o grupo. Quem se recusar a responder bebe.</p>
+      <span class="num">#107</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Você é o “mestre da rodada”: decide quem executa a próxima carta.</p>
+      <span class="num">#108</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto long">Escolha uma palavra proibida. Quem falar essa palavra até sua próxima vez bebe.</p>
+      <span class="num">#109</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Invente uma regra. Quem esquecer a regra até sua próxima vez bebe.</p>
+      <span class="num">#110</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto long">Cada jogador fala o nome de uma fruta. Quem repetir ou demorar mais de 3 segundos bebe.</p>
+      <span class="num">#111</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador fala uma cidade diferente.</p>
+      <span class="num">#112</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador diz um animal. Sem repetir.</p>
+      <span class="num">#113</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador fala uma marca de carro.</p>
+      <span class="num">#114</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador diz um time de futebol.</p>
+      <span class="num">#115</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador fala um filme famoso.</p>
+      <span class="num">#116</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador diz um instrumento musical.</p>
+      <span class="num">#117</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador fala uma profissão.</p>
+      <span class="num">#118</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador diz uma cor.</p>
+      <span class="num">#119</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Cada jogador fala um país. Quem repetir ou travar bebe.</p>
+      <span class="num">#120</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem o nome mais curto bebe.</p>
+      <span class="num">#121</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já viajaram de avião bebem.</p>
+      <span class="num">#122</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma imitação de um professor por 20 segundos.</p>
+      <span class="num">#123</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para responder à próxima carta no seu lugar.</p>
+      <span class="num">#124</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual comida você nunca se cansa de comer?</p>
+      <span class="num">#125</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem mais chaves no bolso ou bolsa bebe.</p>
+      <span class="num">#126</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos levantam um dedo. O último a abaixá-lo bebe.</p>
+      <span class="num">#127</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Fale cinco marcas de carro em 10 segundos.</p>
+      <span class="num">#128</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto long">Faça “pedra, papel e tesoura” com quem está à sua direita. Perdedor bebe.</p>
+      <span class="num">#129</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Se pudesse jantar com qualquer pessoa famosa, quem escolheria?</p>
+      <span class="num">#130</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem usa a maior numeração de calçado bebe.</p>
+      <span class="num">#131</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que gostam mais de frio do que calor bebem.</p>
+      <span class="num">#132</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Conte uma curiosidade sobre você que poucos sabem.</p>
+      <span class="num">#133</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto long">Escolha alguém para ficar uma rodada sem usar a palavra “não”. Se usar, bebe.</p>
+      <span class="num">#134</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o melhor conselho que você já recebeu?</p>
+      <span class="num">#135</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem mais usa emojis nas conversas bebe.</p>
+      <span class="num">#136</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto long">Todos apontam para quem provavelmente se perderia primeiro em uma viagem. O mais votado bebe.</p>
+      <span class="num">#137</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma mímica de um filme famoso.</p>
+      <span class="num">#138</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para fazer uma imitação com você.</p>
+      <span class="num">#139</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a viagem mais divertida da sua vida?</p>
+      <span class="num">#140</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem está usando mais acessórios bebe.</p>
+      <span class="num">#141</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que gostam de churrasco bebem.</p>
+      <span class="num">#142</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Fale o nome de cinco frutas que começam com letras diferentes.</p>
+      <span class="num">#143</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Dê um apelido divertido para a pessoa à sua esquerda.</p>
+      <span class="num">#144</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual aplicativo você mais usa?</p>
+      <span class="num">#145</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já dormiu durante um filme bebe.</p>
+      <span class="num">#146</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos fazem um brinde e dizem uma qualidade da pessoa à direita.</p>
+      <span class="num">#147</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma caminhada como se estivesse na Lua.</p>
+      <span class="num">#148</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para distribuir dois goles.</p>
+      <span class="num">#149</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Se você pudesse aprender uma habilidade instantaneamente, qual seria?</p>
+      <span class="num">#150</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem já esqueceu uma senha importante bebe.</p>
+      <span class="num">#151</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos fecham os olhos. Quem abrir primeiro bebe.</p>
+      <span class="num">#152</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça um discurso de agradecimento como se tivesse ganhado um prêmio.</p>
+      <span class="num">#153</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha um jogador para trocar de lugar com você.</p>
+      <span class="num">#154</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a situação mais engraçada que você viveu este ano?</p>
+      <span class="num">#155</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem usa a menor numeração de calçado bebe.</p>
+      <span class="num">#156</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que preferem praia à montanha bebem.</p>
+      <span class="num">#157</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma imitação de um apresentador de TV.</p>
+      <span class="num">#158</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha dois jogadores para jogarem “par ou ímpar”. Quem perder bebe.</p>
+      <span class="num">#159</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Se pudesse viajar amanhã para qualquer lugar do mundo, para onde iria?</p>
+      <span class="num">#160</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem riu por último bebe.</p>
+      <span class="num">#161</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto long">Todos brindam. Quem esquecer de brindar antes de beber toma mais um gole.</p>
+      <span class="num">#162</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma imitação de um personagem famoso. Se ninguém acertar, beba.</p>
+      <span class="num">#163</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto long">Escolha alguém para beber dois goles ou cumprir um desafio que você inventar (leve e respeitoso).</p>
+      <span class="num">#164</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Se pudesse voltar no tempo por um dia, para qual momento iria?</p>
+      <span class="num">#165</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem o aniversário mais próximo bebe.</p>
+      <span class="num">#166</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto long">Todos apontam para quem seria o melhor cozinheiro. O mais votado distribui dois goles.</p>
+      <span class="num">#167</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Fale três países que começam com a mesma letra.</p>
+      <span class="num">#168</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Você escolhe o próximo jogador a comprar uma carta.</p>
+      <span class="num">#169</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi o melhor show ou evento de que você participou?</p>
+      <span class="num">#170</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem está sentado há mais tempo bebe.</p>
+      <span class="num">#171</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto long">Todos levantam. O último a dar uma volta completa em torno da própria cadeira bebe.</p>
+      <span class="num">#172</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Conte uma piada. Se ninguém rir, beba.</p>
+      <span class="num">#173</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para trocar de copo com você até o fim da rodada.</p>
+      <span class="num">#174</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual objeto da sua casa você mais usa?</p>
+      <span class="num">#175</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem mais demorou para ficar pronto hoje bebe.</p>
+      <span class="num">#176</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que já cozinharam um churrasco bebem.</p>
+      <span class="num">#177</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma pose engraçada. Ela deve ser mantida até sua próxima vez.</p>
+      <span class="num">#178</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha um jogador para ficar imune à próxima carta.</p>
+      <span class="num">#179</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Se pudesse jantar qualquer prato agora, qual seria?</p>
+      <span class="num">#180</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem tem mais letras no primeiro nome bebe.</p>
+      <span class="num">#181</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos dizem uma palavra. Quem repetir uma palavra já falada bebe.</p>
+      <span class="num">#182</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça uma dublagem de uma cena de filme por 20 segundos.</p>
+      <span class="num">#183</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para distribuir três goles.</p>
+      <span class="num">#184</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a maior sorte que você já teve?</p>
+      <span class="num">#185</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">BEBA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 28h36l-3 48c-.4 5-4.5 9-9.5 9H30.5c-5 0-9.1-4-9.5-9L18 28z" fill="#F5C542"/>
+      <path d="M20 28h32v10H20z" fill="#FFE9A0"/>
+      <path d="M18 28c0-8 8-14 18-14s18 6 18 14" fill="#FFF8E8"/>
+      <ellipse cx="36" cy="16" rx="16" ry="7" fill="#FFF"/>
+      <path d="M54 34h10c5 0 9 4 9 9v10c0 5-4 9-9 9H51" fill="none" stroke="#F5C542" stroke-width="5" stroke-linecap="round"/>
+      <path d="M26 48c6 3 14 3 20 0" fill="none" stroke="#E8A820" stroke-width="2" opacity=".5"/>
+    </svg></div>
+      <p class="texto">Quem pegou o celular por último bebe.</p>
+      <span class="num">#186</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">TODOS</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="74" height="74" rx="10" fill="none" stroke="#9B6BFF" stroke-width="4"/>
+      <circle cx="30" cy="34" r="9" fill="#C4A8FF"/>
+      <circle cx="45" cy="28" r="11" fill="#E8DCFF"/>
+      <circle cx="60" cy="34" r="9" fill="#C4A8FF"/>
+      <path d="M16 68c2-12 10-18 21-18h6c11 0 19 6 21 18" fill="#C4A8FF"/>
+      <path d="M28 62c2-10 8-14 17-14s15 4 17 14" fill="#E8DCFF"/>
+    </svg></div>
+      <p class="texto">Todos que usam óculos (de grau ou de sol na cabeça) bebem.</p>
+      <span class="num">#187</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">DESAFIO</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="45" cy="45" r="32" fill="none" stroke="#D6FF3F" stroke-width="5"/>
+      <circle cx="45" cy="45" r="20" fill="none" stroke="#D6FF3F" stroke-width="4"/>
+      <circle cx="45" cy="45" r="8" fill="#D6FF3F"/>
+      <path d="M45 8v10M45 72v10M8 45h10M72 45h10" stroke="#D6FF3F" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Faça um cumprimento diferente com cada jogador da roda.</p>
+      <span class="num">#188</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">ESCOLHA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M18 48c0-8 6-14 14-14h8l6 8 6-8h8c8 0 14 6 14 14v6c0 10-8 18-18 18H36c-10 0-18-8-18-18v-6z" fill="#FF6B45"/>
+      <path d="M32 38c-4-10 2-18 12-18 6 0 10 3 12 8 2-5 6-8 12-8 10 0 16 8 12 18" fill="none" stroke="#FF8F70" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="38" cy="52" r="3" fill="#FFD2C4"/>
+      <circle cx="52" cy="52" r="3" fill="#FFD2C4"/>
+    </svg></div>
+      <p class="texto">Escolha alguém para responder à próxima pergunta do jogo.</p>
+      <span class="num">#189</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">HISTÓRIA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 22c-10 4-16 14-16 26 0 16 12 28 28 30 16-2 28-14 28-30 0-12-6-22-16-26-4 10-12 14-24 14s-20-4-24-14z" fill="#7EB6FF"/>
+      <path d="M36 30c-2 8-8 12-16 14 4 8 12 14 25 15 13-1 21-7 25-15-8-2-14-6-16-14-4 4-10 6-18 6z" fill="#B7D8FF"/>
+      <circle cx="38" cy="48" r="3.5" fill="#041018"/>
+      <circle cx="52" cy="48" r="3.5" fill="#041018"/>
+      <path d="M40 70v10M50 70v10" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+      <path d="M34 82h22" stroke="#7EB6FF" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+      <p class="texto">Qual foi a melhor viagem em grupo que você já fez?</p>
+      <span class="num">#190</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto">Rodada Relâmpago: todos bebem um gole ao mesmo tempo.</p>
+      <span class="num">#191</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto long">Regra Nova: até sua próxima vez, ninguém pode cruzar os braços. Quem cruzar bebe.</p>
+      <span class="num">#192</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto long">Silêncio: até sua próxima vez, ninguém pode falar seu próprio nome. Quem falar bebe.</p>
+      <span class="num">#193</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto xl">Desafio Coletivo: contem juntos de 1 a 20, sem combinar a ordem. Se duas pessoas falarem ao mesmo tempo, todos bebem.</p>
+      <span class="num">#194</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto long">Coringa: guarde esta carta. Você pode cancelar qualquer carta recebida mais tarde.</p>
+      <span class="num">#195</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto long">Mímica: escolha um objeto. Todos tentam fazer a mesma mímica. A mais engraçada distribui dois goles.</p>
+      <span class="num">#196</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto long">Votação: apontem quem provavelmente esqueceria uma mala em uma viagem. O mais votado bebe.</p>
+      <span class="num">#197</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto xl">Desafio Final: todos contam até três e apontam para quem é mais competitivo. O mais votado bebe dois goles.</p>
+      <span class="num">#198</span>
+    </article></section>
+<section class="sheet">
+    <article class="card card-front">
+      <h2 class="cat">CORINGA</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M45 10l8 22h23l-18 14 7 23-20-14-20 14 7-23-18-14h23z" fill="#FFD166"/>
+      <path d="M45 22l5 14h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z" fill="#FFE9A8"/>
+    </svg></div>
+      <p class="texto xl">Brinde Especial: cada jogador faz um brinde de apenas uma palavra. Quem repetir uma palavra já usada bebe.</p>
+      <span class="num">#199</span>
+    </article>
+    <article class="card card-front">
+      <h2 class="cat">FINAL</h2>
+      <div class="icon-wrap"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M28 20h34v8c0 12-8 22-17 26v8h10v6H35v-6h10v-8c-9-4-17-14-17-26V20z" fill="#F3EEE4"/>
+      <rect x="30" y="68" width="30" height="6" rx="2" fill="#F3EEE4"/>
+      <rect x="24" y="76" width="42" height="8" rx="2" fill="#F3EEE4"/>
+      <circle cx="45" cy="34" r="6" fill="#FFD166"/>
+    </svg></div>
+      <p class="texto xl">Fim da rodada! Todos brindam. Quem mais distribuiu goles escolhe alguém pra um último gole. Embaralhem e recomeçem.</p>
+      <span class="num">#200</span>
+    </article><article class="card empty"></article><article class="card empty"></article><article class="card empty"></article><article class="card empty"></article><article class="card empty"></article><article class="card empty"></article><article class="card empty"></article></section>
+</body>
+</html>
